@@ -200,8 +200,6 @@
         function updateNavUI() { slides.forEach((slide, index) => { slide.classList.toggle('active', index === currentSlide); }); document.getElementById('prev-btn').disabled = currentSlide === 0; document.getElementById('next-btn').disabled = currentSlide === totalSlides - 1; }
         function showNextSlide() { if (currentSlide < totalSlides - 1) { currentSlide++; updateNavUI(); } }
         function showPrevSlide() { if (currentSlide > 0) { currentSlide--; updateNavUI(); } }
-        function addDiscoveryPoint() { const input = document.getElementById('discovery-input'); const list = document.getElementById('discovery-list'); const text = input.value.trim(); if (text) { const newItem = document.createElement('li'); newItem.innerHTML = `&bull; ${text}`; list.appendChild(newItem); input.value = ''; } }
-        document.getElementById('discovery-input').addEventListener('keypress', function (e) { if (e.key === 'Enter') addDiscoveryPoint(); });
         function makeEditable(span) {
             const currentText = span.textContent;
             const input = document.createElement('input'); input.type = 'text';
